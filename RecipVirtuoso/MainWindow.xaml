@@ -6,7 +6,55 @@
         xmlns:local="clr-namespace:RecipVirtuoso"
         mc:Ignorable="d"
         Title="Recipe Virtuoso" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="{StaticResource Background}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <Image
+            HorizontalAlignment="Left"
+            VerticalAlignment="Stretch"
+            Height="60"
+            Source="/Images/RecipeVirtuosoLogoCropped.png"/>
+
+        <UniformGrid Columns="5" Margin="5,0">
+            <FrameworkElement x:Name="uniformGrid"/>
+        </UniformGrid>
+
+        <TabControl
+            HorizontalAlignment="Stretch"
+            Grid.Row="1">
+            <TabItem
+                HorizontalAlignment="Stretch"
+                Width="{Binding ElementName=uniformGrid, Path=ActualWidth}"
+                Header="Home">
+                <local:HomeTab/>
+            </TabItem>
+            <TabItem
+                HorizontalAlignment="Stretch"
+                Width="{Binding ElementName=uniformGrid, Path=ActualWidth}"
+                Header="Start Cooking">
+                <local:StartCookingTab/>
+            </TabItem>
+            <TabItem
+                HorizontalAlignment="Stretch"
+                Width="{Binding ElementName=uniformGrid, Path=ActualWidth}"
+                Header="My Recipes">
+                <local:MyRecipesTab/>
+            </TabItem>
+            <TabItem
+                HorizontalAlignment="Stretch"
+                Width="{Binding ElementName=uniformGrid, Path=ActualWidth}"
+                Header="My Meals">
+                <local:MyMealsTab/>
+            </TabItem>
+            <TabItem
+                HorizontalAlignment="Stretch"
+                Width="{Binding ElementName=uniformGrid, Path=ActualWidth}"
+                Header="Preferences">
+                <local:PreferencesTab/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

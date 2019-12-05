@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:RecipVirtuoso"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+      <SolidColorBrush x:Key="Background" Color="White" />
+      <SolidColorBrush x:Key="DarkThemeBackgroundSecondary" Color="#303030"/>
          
     </Application.Resources>
 </Application>
