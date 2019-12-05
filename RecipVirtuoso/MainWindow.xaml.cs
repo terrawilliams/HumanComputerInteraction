@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RecipVirtuoso;
 
-namespace RecipVirtuoso
+namespace RecipeVirtuoso
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -22,6 +23,24 @@ namespace RecipVirtuoso
     {
         public MainWindow()
         {
+            //currently using this as a test driver, will remove this junk later
+            RecipeTask r1 = new RecipeTask("a", 1, true);
+            RecipeTask r2 = new RecipeTask("b", 2, true);
+            RecipeTask r3 = new RecipeTask("c", 3, true);
+            RecipeTask r4 = new RecipeTask("d", 4, true);
+            RecipeTask r5 = new RecipeTask("e", 15, true);
+            Recipe re = new Recipe();
+            re.addTask(r4);
+            re.addTask(r4);
+            Recipe re2 = new Recipe();
+            re2.addTask(r1);
+            re2.addTask(r5);
+            re2.addTask(r1);
+            Meal m = new Meal();
+            m.addRecipe(re);
+            m.addRecipe(re2);
+            m.cook();
+            //
             InitializeComponent();
         }
     }

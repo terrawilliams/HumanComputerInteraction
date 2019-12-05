@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RecipVirtuoso.Properties
+namespace RecipeVirtuoso.Properties
 {
 
 
