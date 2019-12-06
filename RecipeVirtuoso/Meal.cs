@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using RecipeVirtuoso;
 
-namespace RecipVirtuoso
+namespace RecipeVirtuoso
 {
     class Meal
     {
         private List<Recipe> recipes = new List<Recipe>();
         private List<RecipeTask> sortedRecipeTasks = new List<RecipeTask>();
+        private int totalTimeRequired = 0;
 
         public void addRecipe(Recipe r)
         {
@@ -22,6 +23,15 @@ namespace RecipVirtuoso
             recipes[recipeNum] = r;
         }
 
+        public int getTotalTimeRequired()
+        {
+            return totalTimeRequired;
+        }
+
+        public List<RecipeTask> getSortedRecipeTasks()
+        {
+            return sortedRecipeTasks;
+        }
         public void cook()
         {
             //terra: i have a gigantic brain
@@ -56,6 +66,7 @@ namespace RecipVirtuoso
                 holds[i] = 0;
             }
             //Here's the juicy part
+            totalTimeRequired = 0;
             while (!Enumerable.SequenceEqual(tasksPerRecipe, taskIterators))
             {
                 int longestTimeRemaining = 0;
@@ -96,22 +107,26 @@ namespace RecipVirtuoso
                 //This is the recipe task to select to add.
                 RecipeTask recipeTask = recipes[longestTimeIndex].getTasks()[taskIterators[longestTimeIndex]];
                 sortedRecipeTasks.Add(recipeTask);
+                totalTimeRequired += recipeTask.getTime();
 
                 //update all of the holds
                 for (int i = 0; i < numRecipes; i++)
                 {
                     holds[i] = Math.Max(0, holds[i] - recipeTask.getTime());
+                    totalTimeRequired -= holds[i]; //this just takes off time that is spent on waiting for passive events
                 }
                 //if the task is passive, add a hold
                 holds[longestTimeIndex] = !recipeTask.getActive() ? recipeTask.getTime() : 0;
 
                 taskIterators[longestTimeIndex]++; //iterate to next task for that recipe
             }
+            //Debugging
             Console.WriteLine("Sorted List:");
             foreach (var recipeTask in sortedRecipeTasks)
             {
                 Console.WriteLine(recipeTask.getTime());
             }
+            //End Debugging
         }
     }
 }

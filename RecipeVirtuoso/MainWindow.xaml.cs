@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using RecipVirtuoso;
+using RecipeVirtuoso;
 
 namespace RecipeVirtuoso
 {
@@ -40,7 +40,6 @@ namespace RecipeVirtuoso
             m.addRecipe(re);
             m.addRecipe(re2);
             m.cook();
-            //
             InitializeComponent();
         }
     }

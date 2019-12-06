@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RecipeVirtuoso;
 
-namespace RecipVirtuoso
+namespace RecipeVirtuoso
 {
     class Recipe
     {
