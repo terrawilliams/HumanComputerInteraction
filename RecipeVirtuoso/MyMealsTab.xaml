@@ -22,7 +22,7 @@
 
             <TextBlock Text="My Meals:"
                        VerticalAlignment="Bottom"
-                       Margin="10" FontSize="24"/>
+                       Margin="10" FontSize="24" FontWeight="Bold"/>
 
             <Border Grid.Row="1"
                     BorderBrush="Black" BorderThickness=".5"
@@ -60,7 +60,8 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Right">
                     <TextBlock Text="Total Time:"
-                               VerticalAlignment="Center"/>
+                               VerticalAlignment="Center"
+                               FontWeight="Bold"/>
                     <TextBox Text="{Binding Path=TotalTime}"
                              Width="100" Height="25"
                              IsReadOnly="True"
@@ -83,12 +84,12 @@
                 <TextBlock Text="Recipes Included:"
                            HorizontalAlignment="Left"
                            Margin="10"
-                           FontSize="18"/>
+                           FontSize="18" FontWeight="Bold"/>
 
                 <TextBlock Grid.Column="1" Text="Ingredients:"
                            HorizontalAlignment="Left"
                            Margin="10"
-                           FontSize="18"/>
+                           FontSize="18" FontWeight="Bold"/>
 
                 <Border Grid.Row="1"
                         BorderBrush="Black" BorderThickness=".5"

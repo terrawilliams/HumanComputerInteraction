@@ -22,7 +22,7 @@
 
             <TextBlock Text="My Recipes:"
                        VerticalAlignment="Bottom"
-                       Margin="10" FontSize="24"/>
+                       Margin="10" FontSize="24" FontWeight="Bold"/>
 
             <Border Grid.Row="1"
                     BorderBrush="Black" BorderThickness=".5"
@@ -59,7 +59,8 @@
                 <StackPanel Orientation="Horizontal"
                             VerticalAlignment="Center">
                     <TextBlock Text="Total Time:"
-                               VerticalAlignment="Center"/>
+                               VerticalAlignment="Center"
+                               FontWeight="Bold"/>
                     <TextBox Text="{Binding Path=TotalTime}"
                              Width="100" Height="25"
                              IsReadOnly="True"
@@ -82,12 +83,12 @@
                 <TextBlock Text="Ingredients:"
                            HorizontalAlignment="Left"
                            Margin="10"
-                           FontSize="18"/>
+                           FontSize="18" FontWeight="Bold"/>
 
                 <TextBlock Grid.Column="1" Text="Instructions:"
                            HorizontalAlignment="Left"
                            Margin="10"
-                           FontSize="18"/>
+                           FontSize="18" FontWeight="Bold"/>
 
                 <Border Grid.Row="1"
                         BorderBrush="Black" BorderThickness=".5"

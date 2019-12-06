@@ -15,7 +15,8 @@
                         HorizontalAlignment="Center"
                         Margin="10">
                 <TextBlock Text="Number of Ovens:"
-                           VerticalAlignment="Center"/>
+                           VerticalAlignment="Center"
+                           FontWeight="Bold"/>
                 <ComboBox ItemsSource="{Binding Path=NumOvens}"
                           SelectedItem="{Binding Path=SelectedNumOvens}"
                           Margin="10"/>
@@ -25,7 +26,8 @@
                         HorizontalAlignment="Center"
                         Margin="10">
                 <TextBlock Text="Number of Stoves:"
-                           VerticalAlignment="Center"/>
+                           VerticalAlignment="Center"
+                           FontWeight="Bold"/>
                 <ComboBox ItemsSource="{Binding Path=NumStoves}"
                           SelectedItem="{Binding Path=SelectedNumStoves}"
                           Margin="10"/>
