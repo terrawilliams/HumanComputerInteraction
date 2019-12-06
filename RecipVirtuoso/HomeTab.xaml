@@ -32,7 +32,7 @@
             Padding="5" Margin="10"
             BorderBrush="White" BorderThickness=".5">
             <ListBox FontSize="16"
-                     ItemsSource="{Binding Path=RecentCreations}">
+                     ItemsSource="{Binding Path=RecentRecipes}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Path=name}"/>
