@@ -54,32 +54,14 @@
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Center">
+                        HorizontalAlignment="Right"
+                        Margin="10">
                 <StackPanel Orientation="Horizontal"
-                            VerticalAlignment="Center">
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Right">
                     <TextBlock Text="Total Time:"
                                VerticalAlignment="Center"/>
                     <TextBox Text="{Binding Path=TotalTime}"
-                             Width="100" Height="25"
-                             IsReadOnly="True"
-                             Margin="5"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal"
-                            VerticalAlignment="Center">
-                    <TextBlock Text="Active Time:"
-                               VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding Path=ActiveTime}"
-                             Width="100" Height="25"
-                             IsReadOnly="True"
-                             Margin="5"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal"
-                            VerticalAlignment="Center">
-                    <TextBlock Text="Passive Time:"
-                               VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding Path=PassiveTime}"
                              Width="100" Height="25"
                              IsReadOnly="True"
                              Margin="5"/>
