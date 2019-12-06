@@ -20,9 +20,11 @@ namespace RecipVirtuoso
     /// </summary>
     public partial class PreferencesTab : UserControl
     {
+        PreferenceTabModel preferenceTabModel = new PreferenceTabModel();
         public PreferencesTab()
         {
             InitializeComponent();
+            this.DataContext = preferenceTabModel;
         }
     }
 }
