@@ -6,7 +6,134 @@
              xmlns:local="clr-namespace:RecipVirtuoso"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid
+        Background="{StaticResource Background}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2.25*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="My Meals:"
+                       VerticalAlignment="Bottom"
+                       Margin="10" FontSize="24"/>
+
+            <Border Grid.Row="1"
+                    BorderBrush="Black" BorderThickness=".5"
+                    Margin="10">
+                <ListBox ItemsSource="{Binding Path=Recipes}"
+                         SelectedItem="{Binding Path=SelectedMeal}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+
+            <Button Grid.Row="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="Add Meal"
+                    Padding="5"
+                    Click="AddMealButton_Click">
+
+            </Button>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="Total Time:"
+                               VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Path=TotalTime}"
+                             Width="100" Height="25"
+                             IsReadOnly="True"
+                             Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="Active Time:"
+                               VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Path=ActiveTime}"
+                             Width="100" Height="25"
+                             IsReadOnly="True"
+                             Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="Passive Time:"
+                               VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Path=PassiveTime}"
+                             Width="100" Height="25"
+                             IsReadOnly="True"
+                             Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Recipes Included:"
+                           HorizontalAlignment="Left"
+                           Margin="10"
+                           FontSize="18"/>
+
+                <TextBlock Grid.Column="1" Text="Ingredients:"
+                           HorizontalAlignment="Left"
+                           Margin="10"
+                           FontSize="18"/>
+
+                <Border Grid.Row="1"
+                        BorderBrush="Black" BorderThickness=".5"
+                        Margin="10">
+                    <ListBox ItemsSource="{Binding Path=Ingredients}">
+
+                    </ListBox>
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="1"
+                        BorderBrush="Black" BorderThickness=".5"
+                        Margin="10">
+                    <ListBox ItemsSource="{Binding Path=Instructions}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding Path=description}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Border>
+
+                <Button Grid.Column="0" Grid.Row="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="Add Recipe"
+                        Click="AddRecipeButton_Click"/>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

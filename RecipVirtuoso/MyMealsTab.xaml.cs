@@ -24,5 +24,15 @@ namespace RecipVirtuoso
         {
             InitializeComponent();
         }
+
+        private void AddMealButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
