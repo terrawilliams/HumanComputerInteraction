@@ -80,6 +80,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Meal.cs" />
+    <Compile Include="Recipe.cs" />
+    <Compile Include="RecipeTask.cs" />
     <Compile Include="HomeTab.xaml.cs">
       <DependentUpon>HomeTab.xaml</DependentUpon>
     </Compile>
