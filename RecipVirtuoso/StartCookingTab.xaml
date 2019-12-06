@@ -16,7 +16,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="5*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
@@ -38,7 +38,7 @@
                     VerticalAlignment="Center"
                     Padding="5"
                     Click="Button_Click">
-                Start Cooking
+                Cook Meal
             </Button>
         </Grid>
 
