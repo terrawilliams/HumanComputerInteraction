@@ -40,6 +40,7 @@ namespace RecipeVirtuoso
             Meal m = new Meal("owowowow");
             m.addRecipe(re);
             m.addRecipe(re2);
+
             m.cook();
             InitializeComponent();
         }

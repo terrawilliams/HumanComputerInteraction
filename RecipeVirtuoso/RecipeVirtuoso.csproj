@@ -66,6 +66,7 @@
       <DependentUpon>PreferencesTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="PreferenceTabModel.cs" />
+    <Compile Include="RecipeTypesEnum.cs" />
     <Compile Include="StartCookingTab.xaml.cs">
       <DependentUpon>StartCookingTab.xaml</DependentUpon>
     </Compile>
