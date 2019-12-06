@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RecipVirtuoso
+namespace RecipeVirtuoso
 {
     /// <summary>
     /// Interaction logic for StartCookingTab.xaml
