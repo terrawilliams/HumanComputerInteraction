@@ -29,14 +29,14 @@ namespace RecipeVirtuoso
             RecipeTask r3 = new RecipeTask("c", 3, true);
             RecipeTask r4 = new RecipeTask("d", 15, true);
             RecipeTask r5 = new RecipeTask("e", 15, false);
-            Recipe re = new Recipe();
+            Recipe re = new Recipe("aa");
             re.addTask(r3);
             re.addTask(r3);
-            Recipe re2 = new Recipe();
+            Recipe re2 = new Recipe("bb");
             re2.addTask(r1);
             re2.addTask(r5);
             re2.addTask(r4);
-            Meal m = new Meal();
+            Meal m = new Meal("owowowow");
             m.addRecipe(re);
             m.addRecipe(re2);
             m.cook();

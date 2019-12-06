@@ -11,7 +11,18 @@ namespace RecipeVirtuoso
     {
         private List<Recipe> recipes = new List<Recipe>();
         private List<RecipeTask> sortedRecipeTasks = new List<RecipeTask>();
-        private int totalTimeRequired = 0;
+        private int totalTimeRequired;
+        private string name;
+
+        public Meal(string mealName)
+        {
+            name = mealName;
+        }
+
+        public string getName()
+        {
+            return name;
+        }
 
         public void addRecipe(Recipe r)
         {
@@ -32,6 +43,9 @@ namespace RecipeVirtuoso
         {
             return sortedRecipeTasks;
         }
+
+        //cook processes all the data and is the main algorithm. 
+        //After calling cook(), getTotalTimeRequired() and getSortedRecipeTasks() are natural next steps
         public void cook()
         {
             //terra: i have a gigantic brain
