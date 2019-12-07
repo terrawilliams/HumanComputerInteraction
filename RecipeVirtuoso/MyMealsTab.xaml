@@ -13,6 +13,98 @@
             <ColumnDefinition Width="2.25*"/>
         </Grid.ColumnDefinitions>
 
+        <Popup x:Name="AddMealPopup"
+               Grid.Column="1"
+               Height="250" Width="350"
+               IsOpen="{Binding Path=AddingMeal}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center">
+            <Border BorderBrush="Gray"
+                    BorderThickness="2"
+                    Background="DarkGray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="New Meal"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="24"
+                               FontWeight="Bold"/>
+
+                    <TextBox x:Name="MealName" IsReadOnly="False"
+                             Grid.Row="1"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Width="150"/>
+
+                    <StackPanel Grid.Row="2"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <Button Content="Add Meal"
+                                Margin="10"
+                                Click="PopUpAddMealButton_Click"/>
+                        <Button Content="Cancel"
+                                Margin="10"
+                                Click="MealCancelButton_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Popup>
+
+        <Popup x:Name="AddRecipePopup"
+               Grid.Column="1"
+               Height="250" Width="350"
+               IsOpen="{Binding Path=AddingRecipe}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center">
+            <Border BorderBrush="Gray"
+                    BorderThickness="2"
+                    Background="DarkGray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="New Recipe"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="24"
+                               FontWeight="Bold"/>
+
+                    <ComboBox x:Name="RecipeName" Grid.Row="1"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Width="150"
+                              ItemsSource="{Binding Path=PossibleRecipes}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <StackPanel Grid.Row="2"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <Button Content="Add Recipe"
+                                Margin="10"
+                                Click="PopUpAddRecipeButton_Click"/>
+                        <Button Content="Cancel"
+                                Margin="10"
+                                Click="RecipeCancelButton_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Popup>
+
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
@@ -27,11 +119,11 @@
             <Border Grid.Row="1"
                     BorderBrush="Black" BorderThickness=".5"
                     Margin="10">
-                <ListBox ItemsSource="{Binding Path=Recipes}"
+                <ListBox ItemsSource="{Binding Path=Meals}"
                          SelectedItem="{Binding Path=SelectedMeal}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Path=name}"/>
+                            <TextBlock Text="{Binding Path=Name}"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -52,6 +144,13 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="6*"/>
             </Grid.RowDefinitions>
+
+            <TextBlock Text="{Binding Path=CurrentMeal.Name}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       Margin="10,0"/>
 
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right"
@@ -94,20 +193,19 @@
                 <Border Grid.Row="1"
                         BorderBrush="Black" BorderThickness=".5"
                         Margin="10">
-                    <ListBox ItemsSource="{Binding Path=Ingredients}">
-
+                    <ListBox ItemsSource="{Binding Path=CurrentMeal.Recipes}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Name}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
                     </ListBox>
                 </Border>
 
                 <Border Grid.Row="1" Grid.Column="1"
                         BorderBrush="Black" BorderThickness=".5"
                         Margin="10">
-                    <ListBox ItemsSource="{Binding Path=Instructions}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <CheckBox Content="{Binding Path=description}"/>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
+                    <ListBox ItemsSource="{Binding Path=CurrentMeal.Ingredients}">
                     </ListBox>
                 </Border>
 

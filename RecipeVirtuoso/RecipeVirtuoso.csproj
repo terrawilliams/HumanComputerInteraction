@@ -58,6 +58,7 @@
     <Compile Include="MyMealsTab.xaml.cs">
       <DependentUpon>MyMealsTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyMealsTabModel.cs" />
     <Compile Include="MyRecipesTab.xaml.cs">
       <DependentUpon>MyRecipesTab.xaml</DependentUpon>
     </Compile>

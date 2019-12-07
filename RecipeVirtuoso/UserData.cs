@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,8 @@ namespace RecipeVirtuoso
         #region Members
         private static UserData instance = new UserData();
 
-        private static List<Recipe> userRecipes = new List<Recipe>();
-        private static List<Meal> userMeals = new List<Meal>();
+        private static ObservableCollection<Recipe> userRecipes = new ObservableCollection<Recipe>();
+        private static ObservableCollection<Meal> userMeals = new ObservableCollection<Meal>();
         #endregion
 
         #region Constructor
@@ -25,13 +26,13 @@ namespace RecipeVirtuoso
             get { return instance; }
         }
 
-        public static List<Recipe> UserRecipes
+        public static ObservableCollection<Recipe> UserRecipes
         {
             get { return userRecipes; }
             set { userRecipes = value; }
         }
 
-        public static List<Meal> UserMeals
+        public static ObservableCollection<Meal> UserMeals
         {
             get { return userMeals; }
             set { userMeals = value; }

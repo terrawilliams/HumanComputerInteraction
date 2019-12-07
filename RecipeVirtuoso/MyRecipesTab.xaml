@@ -221,7 +221,7 @@
                 <TextBlock Text="Total Time:"
                            VerticalAlignment="Center"
                            FontWeight="Bold"/>
-                <TextBox Text="{Binding Path=SelectedRecipe.TotalTime}"
+                <TextBox Text="{Binding Path=CurrentRecipe.TotalTime}"
                          Width="100" Height="25"
                          IsReadOnly="True"
                          Margin="5"/>

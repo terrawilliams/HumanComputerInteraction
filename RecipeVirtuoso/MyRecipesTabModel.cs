@@ -94,6 +94,8 @@ namespace RecipeVirtuoso
         {
             addingRecipe = false;
             OnPropertyChanged("AddingRecipe");
+
+            UserData.UserRecipes = recipes;
         }
 
         public void StartAddingIngredient()
@@ -116,6 +118,8 @@ namespace RecipeVirtuoso
                     OnPropertyChanged("CurrentRecipe");
                 }
             }
+
+            UserData.UserRecipes = recipes;
         }
 
         public void StopAddingIngredient()
@@ -144,6 +148,8 @@ namespace RecipeVirtuoso
                     OnPropertyChanged("CurrentRecipe");
                 }
             }
+
+            UserData.UserRecipes = recipes;
         }
 
         public void StopAddingRecipeTask()
