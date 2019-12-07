@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,21 +10,22 @@ namespace RecipeVirtuoso
 {
     class Recipe
     {
-        private List<RecipeTask> tasks = new List<RecipeTask>();
+        private ObservableCollection<RecipeTask> tasks = new ObservableCollection<RecipeTask>();
         private string name;
-        private List<string> ingredients = new List<string>();
+        private ObservableCollection<string> ingredients = new ObservableCollection<string>();
 
         public string Name
         { 
             get { return name; }
+            set { name = value; }
         }
 
-        public List<RecipeTask> Tasks
+        public ObservableCollection<RecipeTask> Tasks
         {
             get { return tasks; }
         }
 
-        public List<string> Ingredients
+        public ObservableCollection<string> Ingredients
         {
             get { return ingredients; }
         }
@@ -43,7 +45,7 @@ namespace RecipeVirtuoso
             ingredients.Add(ingredient);
         }
 
-        public List<string> getIngredients()
+        public ObservableCollection<string> getIngredients()
         {
             return ingredients;
         }
@@ -68,7 +70,7 @@ namespace RecipeVirtuoso
             return tasks.Count;
         }
 
-        public List<RecipeTask> getTasks()
+        public ObservableCollection<RecipeTask> getTasks()
         {
             return tasks;
         }

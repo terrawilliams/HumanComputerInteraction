@@ -34,12 +34,24 @@ namespace RecipeVirtuoso
 
         private void AddIngredientButton_Click(object sender, RoutedEventArgs e)
         {
-            myRecipesTabModel.AddIngredient();
+            myRecipesTabModel.StartAddingIngredient();
         }
 
         private void AddInstructionButton_Click(object sender, RoutedEventArgs e)
         {
-            myRecipesTabModel.AddRecipeTask();
+            myRecipesTabModel.StartAddingRecipeTask();
+        }
+
+        private void PopUpAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            myRecipesTabModel.AddIngredient(IngredientDescription.Text);
+            myRecipesTabModel.StopAddingIngredient();
+            IngredientDescription.Text = string.Empty;
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            myRecipesTabModel.StopAddingIngredient();
         }
     }
 }
