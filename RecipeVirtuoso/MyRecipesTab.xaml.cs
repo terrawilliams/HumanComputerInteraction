@@ -28,15 +28,23 @@ namespace RecipeVirtuoso
             this.DataContext = myRecipesTabModel;
         }
 
+        //add a recipe
         private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
         {
-            AddRecipePopup.IsOpen = true;
+            myRecipesTabModel.StartAddingRecipe();
         }
 
-//        public void AddRecipe()
-//        {
-//            myRecipesTabModel.AddRecipe();
-//        }
+        private void PopUpAddRecipeButton_Click(object sender, RoutedEventArgs e)
+        {
+            myRecipesTabModel.AddRecipe(RecipeName.Text);
+            myRecipesTabModel.StopAddingRecipe();
+            RecipeName.Text = string.Empty;
+        }
+
+        private void RecipeCancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            myRecipesTabModel.StopAddingRecipe();
+        }
 
         private void AddIngredientButton_Click(object sender, RoutedEventArgs e)
         {
@@ -48,14 +56,14 @@ namespace RecipeVirtuoso
             myRecipesTabModel.StartAddingRecipeTask();
         }
 
-        private void PopUpAddButton_Click(object sender, RoutedEventArgs e)
+        private void IngredientPopUpAddButton_Click(object sender, RoutedEventArgs e)
         {
             myRecipesTabModel.AddIngredient(IngredientDescription.Text);
             myRecipesTabModel.StopAddingIngredient();
             IngredientDescription.Text = string.Empty;
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        private void IngredientCancelButton_Click(object sender, RoutedEventArgs e)
         {
             myRecipesTabModel.StopAddingIngredient();
         }

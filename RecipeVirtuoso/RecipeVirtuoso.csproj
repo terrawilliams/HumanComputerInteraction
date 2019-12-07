@@ -55,9 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddRecipePopup.xaml.cs">
-      <DependentUpon>AddRecipePopup.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MyMealsTab.xaml.cs">
       <DependentUpon>MyMealsTab.xaml</DependentUpon>
     </Compile>
@@ -74,10 +71,6 @@
       <DependentUpon>StartCookingTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserData.cs" />
-    <Page Include="AddRecipePopup.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="HomeTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

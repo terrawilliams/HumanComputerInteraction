@@ -14,6 +14,49 @@
             <ColumnDefinition Width="2.25*"/>
         </Grid.ColumnDefinitions>
 
+        <Popup x:Name="AddRecipePopup"
+               Grid.Column="1"
+               Height="250" Width="350"
+               IsOpen="{Binding Path=AddingRecipe}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center">
+            <Border BorderBrush="Gray"
+                    BorderThickness="2"
+                    Background="DarkGray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="New Recipe"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="24"
+                               FontWeight="Bold"/>
+
+                    <TextBox x:Name="RecipeName" IsReadOnly="False"
+                             Grid.Row="1"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Width="150"/>
+
+                    <StackPanel Grid.Row="2"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <Button Content="Add Recipe"
+                                Margin="10"
+                                Click="PopUpAddRecipeButton_Click"/>
+                        <Button Content="Cancel"
+                                Margin="10"
+                                Click="RecipeCancelButton_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Popup>
+
         <Popup x:Name="AddIngredientPopup"
                Grid.Column="1"
                Height="250" Width="350"
@@ -48,10 +91,10 @@
                                 VerticalAlignment="Center">
                         <Button Content="Add Ingredient"
                                 Margin="10"
-                                Click="PopUpAddButton_Click"/>
+                                Click="IngredientPopUpAddButton_Click"/>
                         <Button Content="Cancel"
                                 Margin="10"
-                                Click="CancelButton_Click"/>
+                                Click="IngredientCancelButton_Click"/>
                     </StackPanel>
                 </Grid>
             </Border>
@@ -75,8 +118,7 @@
                          SelectedItem="{Binding Path=SelectedRecipe}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Path=Name, Mode=TwoWay}"
-                                     IsReadOnly="False"/>
+                            <TextBlock Text="{Binding Path=Name}"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -112,13 +154,13 @@
                 <TextBlock Text="Total Time:"
                            VerticalAlignment="Center"
                            FontWeight="Bold"/>
-                <TextBox Text="{Binding Path=SelectedRecipe.}"
+                <TextBox Text="{Binding Path=SelectedRecipe.TotalTime}"
                          Width="100" Height="25"
                          IsReadOnly="True"
                          Margin="5"/>
             </StackPanel>
 
-                <Grid Grid.Row="1">
+            <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
@@ -172,8 +214,5 @@
                         Click="AddInstructionButton_Click"/>
             </Grid>
         </Grid>
-        <Popup x:Name="AddRecipePopup" HorizontalOffset="200" VerticalOffset="200" IsOpen="False">
-            <recipeVirtuoso:AddRecipePopup/>
-        </Popup>
     </Grid>
 </UserControl>

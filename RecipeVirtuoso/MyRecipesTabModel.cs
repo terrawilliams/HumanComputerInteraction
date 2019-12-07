@@ -50,6 +50,12 @@ namespace RecipeVirtuoso
             get { return currentRecipe; }
         }
 
+        public bool AddingRecipe
+        {
+            get { return addingRecipe; }
+            set { addingRecipe = true; }
+        }
+
         public bool AddingIngredient
         {
             get { return addingIngredient; }
@@ -66,15 +72,34 @@ namespace RecipeVirtuoso
         #region Constructor
         public MyRecipesTabModel()
         {
+            addingRecipe = false;
             addingIngredient = false;
             addingTask = false;
         }
         #endregion
 
         #region Methods
-        public void AddRecipe()
+        public void StartAddingRecipe()
         {
+            addingRecipe = true;
+            OnPropertyChanged("AddingRecipe");
+        }
 
+        public void AddRecipe(string recipeName)
+        {
+            recipes.Add(new Recipe(recipeName));
+        }
+
+        public void StopAddingRecipe()
+        {
+            addingRecipe = false;
+            OnPropertyChanged("AddingRecipe");
+        }
+
+        public void StartAddingIngredient()
+        {
+            addingIngredient = true;
+            OnPropertyChanged("AddingIngredient");
         }
 
         public void AddIngredient(string ingredient)
@@ -98,7 +123,27 @@ namespace RecipeVirtuoso
 
         public void StartAddingRecipeTask()
         {
-            
+            addingTask = true;
+            OnPropertyChanged("AddingTask");
+        }
+
+        public void AddRecipeTask(RecipeTask newTask)
+        {
+            foreach(Recipe recipe in recipes)
+            {
+                if(recipe.Name == currentRecipe.Name)
+                {
+                    recipe.addTask(newTask);
+                    currentRecipe = recipe;
+                    OnPropertyChanged("CurrentRecipe");
+                }
+            }
+        }
+
+        public void StopAddingRecipTask()
+        {
+            addingTask = false;
+            OnPropertyChanged("AddingTask");
         }
 
         private void OnPropertyChanged(string property)
