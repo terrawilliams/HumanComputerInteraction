@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RecipeVirtuoso;
 
 namespace RecipeVirtuoso
 {
@@ -20,7 +21,7 @@ namespace RecipeVirtuoso
     /// </summary>
     public partial class MyRecipesTab : UserControl
     {
-        MyRecipesTabModel myRecipesTabModel = new MyRecipesTabModel();
+        public static MyRecipesTabModel myRecipesTabModel = new MyRecipesTabModel();
         public MyRecipesTab()
         {
             InitializeComponent();
@@ -29,8 +30,13 @@ namespace RecipeVirtuoso
 
         private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
         {
-            myRecipesTabModel.AddRecipe();
+            AddRecipePopup.IsOpen = true;
         }
+
+//        public void AddRecipe()
+//        {
+//            myRecipesTabModel.AddRecipe();
+//        }
 
         private void AddIngredientButton_Click(object sender, RoutedEventArgs e)
         {

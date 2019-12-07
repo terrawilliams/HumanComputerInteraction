@@ -8,7 +8,7 @@ using RecipeVirtuoso;
 
 namespace RecipeVirtuoso
 {
-    class Recipe
+    public class Recipe
     {
         private ObservableCollection<RecipeTask> tasks = new ObservableCollection<RecipeTask>();
         private string name;

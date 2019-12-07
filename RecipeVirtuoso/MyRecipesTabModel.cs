@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RecipeVirtuoso
 {
-    class MyRecipesTabModel : INotifyPropertyChanged
+    public class MyRecipesTabModel : INotifyPropertyChanged
     {
         #region Members
         private ObservableCollection<Recipe> recipes = new ObservableCollection<Recipe>();
@@ -74,16 +74,7 @@ namespace RecipeVirtuoso
         #region Methods
         public void AddRecipe()
         {
-            recipes.Add(new Recipe("New Recipe " + recipes.Count));
-        }
 
-        public void StartAddingIngredient()
-        {
-            if (currentRecipe != null)
-            {
-                addingIngredient = true;
-                OnPropertyChanged("AddingIngredient");
-            }
         }
 
         public void AddIngredient(string ingredient)

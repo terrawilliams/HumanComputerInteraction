@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RecipeVirtuoso
 {
-    class RecipeTask
+    public class RecipeTask
     {
         private string description;
         private int timeRequired;
