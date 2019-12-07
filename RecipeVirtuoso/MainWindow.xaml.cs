@@ -21,7 +21,6 @@ namespace RecipeVirtuoso
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static int apple;
         public MainWindow()
         {
             //currently using this as a test driver, will remove this junk later
