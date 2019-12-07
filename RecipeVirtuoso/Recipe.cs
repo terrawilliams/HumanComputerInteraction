@@ -13,6 +13,21 @@ namespace RecipeVirtuoso
         private string name;
         private List<string> ingredients = new List<string>();
 
+        public string Name
+        { 
+            get { return name; }
+        }
+
+        public List<RecipeTask> Tasks
+        {
+            get { return tasks; }
+        }
+
+        public List<string> Ingredients
+        {
+            get { return ingredients; }
+        }
+
         public Recipe(string recipeName)
         {
             name = recipeName;

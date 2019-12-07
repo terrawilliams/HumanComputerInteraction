@@ -31,7 +31,7 @@
                          SelectedItem="{Binding Path=SelectedRecipe}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Path=name}"/>
+                            <TextBlock Text="{Binding Path=Name}"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -93,7 +93,7 @@
                 <Border Grid.Row="1"
                         BorderBrush="Black" BorderThickness=".5"
                         Margin="10">
-                    <ListBox ItemsSource="{Binding Path=Ingredients}">
+                    <ListBox ItemsSource="{Binding Path=SelectedRecipe.Ingredients}">
 
                     </ListBox>
                 </Border>
@@ -101,10 +101,10 @@
                 <Border Grid.Row="1" Grid.Column="1"
                         BorderBrush="Black" BorderThickness=".5"
                         Margin="10">
-                    <ListBox ItemsSource="{Binding Path=Instructions}">
+                    <ListBox ItemsSource="{Binding Path=SelectedRecipe.Tasks}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <CheckBox Content="{Binding Path=description}"/>
+                                <CheckBox Content="{Binding Path=Description}"/>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
