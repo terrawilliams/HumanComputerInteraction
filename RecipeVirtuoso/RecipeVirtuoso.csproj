@@ -62,6 +62,7 @@
     <Compile Include="MyRecipesTab.xaml.cs">
       <DependentUpon>MyRecipesTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyRecipesTabModel.cs" />
     <Compile Include="PreferencesTab.xaml.cs">
       <DependentUpon>PreferencesTab.xaml</DependentUpon>
     </Compile>
@@ -70,6 +71,7 @@
     <Compile Include="StartCookingTab.xaml.cs">
       <DependentUpon>StartCookingTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserData.cs" />
     <Page Include="HomeTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

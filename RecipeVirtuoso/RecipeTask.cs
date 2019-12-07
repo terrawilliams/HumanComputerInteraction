@@ -12,6 +12,21 @@ namespace RecipeVirtuoso
         private int timeRequired;
         private bool activeTask;
 
+        public string Description
+        {
+            get { return description; }
+        }
+
+        public int TimeRequired
+        {
+            get { return timeRequired; }
+        }
+
+        public bool ActiveTask
+        { 
+            get { return activeTask; }
+        }
+
         public RecipeTask(string desc, int time, bool active)
         {
             description = desc;

@@ -22,7 +22,7 @@
 
             <TextBlock Text="My Recipes:"
                        VerticalAlignment="Bottom"
-                       Margin="10" FontSize="24"/>
+                       Margin="10" FontSize="24" FontWeight="Bold"/>
 
             <Border Grid.Row="1"
                     BorderBrush="Black" BorderThickness=".5"
@@ -31,7 +31,7 @@
                          SelectedItem="{Binding Path=SelectedRecipe}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Path=name}"/>
+                            <TextBlock Text="{Binding Path=Name}"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -54,32 +54,14 @@
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Center">
+                        HorizontalAlignment="Right"
+                        Margin="10">
                 <StackPanel Orientation="Horizontal"
                             VerticalAlignment="Center">
                     <TextBlock Text="Total Time:"
-                               VerticalAlignment="Center"/>
+                               VerticalAlignment="Center"
+                               FontWeight="Bold"/>
                     <TextBox Text="{Binding Path=TotalTime}"
-                             Width="100" Height="25"
-                             IsReadOnly="True"
-                             Margin="5"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal"
-                            VerticalAlignment="Center">
-                    <TextBlock Text="Active Time:"
-                               VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding Path=ActiveTime}"
-                             Width="100" Height="25"
-                             IsReadOnly="True"
-                             Margin="5"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal"
-                            VerticalAlignment="Center">
-                    <TextBlock Text="Passive Time:"
-                               VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding Path=PassiveTime}"
                              Width="100" Height="25"
                              IsReadOnly="True"
                              Margin="5"/>
@@ -101,17 +83,17 @@
                 <TextBlock Text="Ingredients:"
                            HorizontalAlignment="Left"
                            Margin="10"
-                           FontSize="18"/>
+                           FontSize="18" FontWeight="Bold"/>
 
                 <TextBlock Grid.Column="1" Text="Instructions:"
                            HorizontalAlignment="Left"
                            Margin="10"
-                           FontSize="18"/>
+                           FontSize="18" FontWeight="Bold"/>
 
                 <Border Grid.Row="1"
                         BorderBrush="Black" BorderThickness=".5"
                         Margin="10">
-                    <ListBox ItemsSource="{Binding Path=Ingredients}">
+                    <ListBox ItemsSource="{Binding Path=SelectedRecipe.Ingredients}">
 
                     </ListBox>
                 </Border>
@@ -119,10 +101,10 @@
                 <Border Grid.Row="1" Grid.Column="1"
                         BorderBrush="Black" BorderThickness=".5"
                         Margin="10">
-                    <ListBox ItemsSource="{Binding Path=Instructions}">
+                    <ListBox ItemsSource="{Binding Path=SelectedRecipe.Tasks}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <CheckBox Content="{Binding Path=description}"/>
+                                <CheckBox Content="{Binding Path=Description}"/>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>

@@ -20,24 +20,26 @@ namespace RecipeVirtuoso
     /// </summary>
     public partial class MyRecipesTab : UserControl
     {
+        MyRecipesTabModel myRecipesTabModel = new MyRecipesTabModel();
         public MyRecipesTab()
         {
             InitializeComponent();
+            this.DataContext = myRecipesTabModel;
         }
 
         private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
         {
-
+            myRecipesTabModel.AddRecipe();
         }
 
         private void AddIngredientButton_Click(object sender, RoutedEventArgs e)
         {
-
+            myRecipesTabModel.AddIngredient();
         }
 
         private void AddInstructionButton_Click(object sender, RoutedEventArgs e)
         {
-
+            myRecipesTabModel.AddRecipeTask();
         }
     }
 }
