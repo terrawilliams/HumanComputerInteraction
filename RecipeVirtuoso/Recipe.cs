@@ -7,7 +7,7 @@ using RecipeVirtuoso;
 
 namespace RecipeVirtuoso
 {
-    class Recipe
+    public class Recipe
     {
         private List<RecipeTask> tasks = new List<RecipeTask>();
         private string name;

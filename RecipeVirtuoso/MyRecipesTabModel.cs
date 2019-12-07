@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RecipeVirtuoso
 {
-    class MyRecipesTabModel : INotifyPropertyChanged
+    public class MyRecipesTabModel : INotifyPropertyChanged
     {
         #region Members
         private List<Recipe> recipes;
@@ -20,6 +20,11 @@ namespace RecipeVirtuoso
         public List<Recipe> Recipes
         {
             get { return recipes; }
+            set
+            {
+                recipes = value;
+                OnPropertyChanged("Recipes");
+            }
         }
 
         public Recipe SelectedRecipe
@@ -34,12 +39,20 @@ namespace RecipeVirtuoso
 
         #region Constructor
 
+        public MyRecipesTabModel()
+        {
+            Recipes = new List<Recipe>();
+            Recipes.Add(new Recipe("test"));
+        }
         #endregion
 
         #region Methods
-        public void AddRecipe()
+        public void AddRecipe(string text)
         {
-
+            var tmp = Recipes;
+            Recipes = new List<Recipe>();
+            tmp.ForEach(Recipes.Add);
+            Recipes.Add(new Recipe(text));
         }
 
         public void AddIngredient()

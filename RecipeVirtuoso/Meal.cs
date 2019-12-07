@@ -7,7 +7,7 @@ using RecipeVirtuoso;
 
 namespace RecipeVirtuoso
 {
-    class Meal
+    public class Meal
     {
         private List<Recipe> recipes = new List<Recipe>();
         private List<RecipeTask> sortedRecipeTasks = new List<RecipeTask>();
