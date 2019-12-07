@@ -46,14 +46,10 @@ namespace RecipeVirtuoso
             myRecipesTabModel.StopAddingRecipe();
         }
 
+        //add an ingredient
         private void AddIngredientButton_Click(object sender, RoutedEventArgs e)
         {
             myRecipesTabModel.StartAddingIngredient();
-        }
-
-        private void AddInstructionButton_Click(object sender, RoutedEventArgs e)
-        {
-            myRecipesTabModel.StartAddingRecipeTask();
         }
 
         private void IngredientPopUpAddButton_Click(object sender, RoutedEventArgs e)
@@ -66,6 +62,42 @@ namespace RecipeVirtuoso
         private void IngredientCancelButton_Click(object sender, RoutedEventArgs e)
         {
             myRecipesTabModel.StopAddingIngredient();
+        }
+
+        //add an instruction
+        private void AddInstructionButton_Click(object sender, RoutedEventArgs e)
+        {
+            myRecipesTabModel.StartAddingRecipeTask();
+        }
+
+        private void InstructionPopUpAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            int taskTime = 0;
+
+            try
+            {
+                taskTime= Int32.Parse(TaskTime.Text);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+                taskTime = 0;
+            }
+
+            RecipeTask task = new RecipeTask(TaskDescription.Text, taskTime, (bool)isActiveCheckbox.IsChecked);
+            myRecipesTabModel.AddRecipeTask(task);
+            myRecipesTabModel.StopAddingRecipeTask();
+
+            TaskDescription.Text = string.Empty;
+            TaskTime.Text = string.Empty;
+            isActiveCheckbox.IsChecked = false;
+
+
+        }
+
+        private void InstructionCancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            myRecipesTabModel.StopAddingRecipeTask();
         }
     }
 }

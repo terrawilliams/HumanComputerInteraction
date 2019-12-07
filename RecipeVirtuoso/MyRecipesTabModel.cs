@@ -98,8 +98,11 @@ namespace RecipeVirtuoso
 
         public void StartAddingIngredient()
         {
-            addingIngredient = true;
-            OnPropertyChanged("AddingIngredient");
+            if (currentRecipe != null)
+            {
+                addingIngredient = true;
+                OnPropertyChanged("AddingIngredient");
+            }
         }
 
         public void AddIngredient(string ingredient)
@@ -123,8 +126,11 @@ namespace RecipeVirtuoso
 
         public void StartAddingRecipeTask()
         {
-            addingTask = true;
-            OnPropertyChanged("AddingTask");
+            if (currentRecipe != null)
+            {
+                addingTask = true;
+                OnPropertyChanged("AddingTask");
+            }
         }
 
         public void AddRecipeTask(RecipeTask newTask)
@@ -140,7 +146,7 @@ namespace RecipeVirtuoso
             }
         }
 
-        public void StopAddingRecipTask()
+        public void StopAddingRecipeTask()
         {
             addingTask = false;
             OnPropertyChanged("AddingTask");
