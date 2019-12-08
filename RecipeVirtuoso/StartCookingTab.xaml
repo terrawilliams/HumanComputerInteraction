@@ -29,7 +29,11 @@
                     Margin="10">
                 <ListBox ItemsSource="{Binding Path=Meals}"
                          SelectedItem="{Binding Path=SelectedMeal}">
-                    
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
             </Border>
 
@@ -48,6 +52,13 @@
                 <RowDefinition Height="6*"/>
             </Grid.RowDefinitions>
 
+            <TextBlock Text="{Binding Path=CurrentMeal.Name}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       Margin="10,0"/>
+
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         Margin="10">
@@ -56,7 +67,7 @@
                     <TextBlock Text="Total Time:"
                                VerticalAlignment="Center"
                                FontWeight="Bold"/>
-                    <TextBox Text="{Binding Path=TotalTime}"
+                    <TextBox Text="{Binding Path=CurrentMeal.TotalTimeRequired}"
                              Width="100" Height="25"
                              IsReadOnly="True"
                              Margin="5"/>
@@ -87,7 +98,7 @@
                 <Border Grid.Row="1"
                         BorderBrush="Black" BorderThickness=".5"
                         Margin="10">
-                    <ListBox ItemsSource="{Binding Path=Ingredients}">
+                    <ListBox ItemsSource="{Binding Path=CurrentMeal.Ingredients}">
                         
                     </ListBox>
                 </Border>
@@ -95,10 +106,10 @@
                 <Border Grid.Row="1" Grid.Column="1"
                         BorderBrush="Black" BorderThickness=".5"
                         Margin="10">
-                    <ListBox ItemsSource="{Binding Path=Instructions}">
+                    <ListBox ItemsSource="{Binding Path=CurrentMeal.SortedRecipeTasks}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <CheckBox Content="{Binding Path=description}"/>
+                                <CheckBox Content="{Binding Path=Description}"/>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>

@@ -71,6 +71,7 @@
     <Compile Include="StartCookingTab.xaml.cs">
       <DependentUpon>StartCookingTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StartCookingTabModel.cs" />
     <Compile Include="UserData.cs" />
     <Page Include="HomeTab.xaml">
       <SubType>Designer</SubType>

@@ -20,14 +20,16 @@ namespace RecipeVirtuoso
     /// </summary>
     public partial class StartCookingTab : UserControl
     {
+        StartCookingTabModel startCookingTabModel = new StartCookingTabModel();
         public StartCookingTab()
         {
             InitializeComponent();
+            this.DataContext = startCookingTabModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            startCookingTabModel.CookMeal();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace RecipeVirtuoso
             get { return recipes; }
         }
 
-        public ObservableCollection<RecipeTask> SortedRecipeTask
+        public ObservableCollection<RecipeTask> SortedRecipeTasks
         {
             get { return sortedRecipeTasks; }
         }
@@ -34,6 +34,12 @@ namespace RecipeVirtuoso
         public ObservableCollection<string> Ingredients
         {
             get { return ingredients; }
+        }
+
+        public int TotalTimeRequired
+        {
+            get { return totalTimeRequired; }
+            set { totalTimeRequired = value; }
         }
 
         public Meal(string mealName)
@@ -77,6 +83,9 @@ namespace RecipeVirtuoso
         {
             //terra: i have a gigantic brain
             int numRecipes = recipes.Count;
+
+            if (numRecipes == 0) return;
+
             int [] tasksPerRecipe = new int[numRecipes];
             for (int i = 0; i < numRecipes; i++)
             {
