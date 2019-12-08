@@ -13,6 +13,7 @@ namespace RecipeVirtuoso
         private ObservableCollection<RecipeTask> tasks = new ObservableCollection<RecipeTask>();
         private string name;
         private ObservableCollection<string> ingredients = new ObservableCollection<string>();
+        private int totalTime;
 
         public string Name
         { 
@@ -28,6 +29,11 @@ namespace RecipeVirtuoso
         public ObservableCollection<string> Ingredients
         {
             get { return ingredients; }
+        }
+
+        public int TotalTime
+        {
+            get { return totalTime; }
         }
 
         public Recipe(string recipeName)
@@ -53,10 +59,12 @@ namespace RecipeVirtuoso
         public void addTask(RecipeTask r)
         {
             tasks.Add(r);
+            totalTime += r.TimeRequired;
         }
 
         public void removeTask(int taskNum)
         {
+
             tasks.RemoveAt(taskNum);
         }
 

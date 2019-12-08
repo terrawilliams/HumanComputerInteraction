@@ -221,10 +221,12 @@
                 <TextBlock Text="Total Time:"
                            VerticalAlignment="Center"
                            FontWeight="Bold"/>
-                <TextBox Text="{Binding Path=CurrentRecipe.TotalTime}"
-                         Width="100" Height="25"
-                         IsReadOnly="True"
+                <TextBlock Text="{Binding Path=CurrentRecipe.TotalTime}"
+                           VerticalAlignment="Center"
                          Margin="5"/>
+                <TextBlock Text="min."
+                           VerticalAlignment="Center"
+                           Margin="5"/>
             </StackPanel>
 
             <Grid Grid.Row="1">

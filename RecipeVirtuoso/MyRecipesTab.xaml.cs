@@ -84,6 +84,8 @@ namespace RecipeVirtuoso
                 taskTime = 0;
             }
 
+            Console.WriteLine("TaskTime: " + taskTime);
+
             RecipeTask task = new RecipeTask(TaskDescription.Text, taskTime, (bool)isActiveCheckbox.IsChecked);
             myRecipesTabModel.AddRecipeTask(task);
             myRecipesTabModel.StopAddingRecipeTask();
