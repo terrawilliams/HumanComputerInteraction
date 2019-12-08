@@ -155,17 +155,6 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         Margin="10">
-                <StackPanel Orientation="Horizontal"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Right">
-                    <TextBlock Text="Total Time:"
-                               VerticalAlignment="Center"
-                               FontWeight="Bold"/>
-                    <TextBox Text="{Binding Path=TotalTime}"
-                             Width="100" Height="25"
-                             IsReadOnly="True"
-                             Margin="5"/>
-                </StackPanel>
             </StackPanel>
 
             <Grid Grid.Row="1">

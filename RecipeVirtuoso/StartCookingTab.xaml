@@ -67,10 +67,11 @@
                     <TextBlock Text="Total Time:"
                                VerticalAlignment="Center"
                                FontWeight="Bold"/>
-                    <TextBox Text="{Binding Path=CurrentMeal.TotalTimeRequired}"
-                             Width="100" Height="25"
-                             IsReadOnly="True"
+                    <TextBlock Text="{Binding Path=CurrentMeal.TotalTimeRequired}"
+                             VerticalAlignment="Center"
                              Margin="5"/>
+                    <TextBlock Text="min."
+                               VerticalAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
 
