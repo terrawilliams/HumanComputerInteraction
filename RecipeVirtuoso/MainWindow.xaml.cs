@@ -28,7 +28,7 @@ namespace RecipeVirtuoso
             RecipeTask r2 = new RecipeTask("b", 2, true);
             RecipeTask r3 = new RecipeTask("c", 3, true);
             RecipeTask r4 = new RecipeTask("d", 15, true);
-            RecipeTask r5 = new RecipeTask("e", 15, false);
+            RecipeTask r5 = new RecipeTask("e", 100, false);
             Recipe re = new Recipe("aa");
             re.addTask(r3);
             re.addTask(r3);
@@ -41,6 +41,7 @@ namespace RecipeVirtuoso
             m.addRecipe(re2);
 
             m.cook();
+            Console.WriteLine("Timereq: " + m.TotalTimeRequired);
             InitializeComponent();
         }
     }

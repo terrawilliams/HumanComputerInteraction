@@ -159,12 +159,18 @@ namespace RecipeVirtuoso
                 sortedRecipeTasks.Add(recipeTask);
                 totalTimeRequired += recipeTask.getTime();
 
+                //fixed the time calculation here! 
+                if (holds[longestTimeIndex] > 0)
+                {
+                    totalTimeRequired -= recipeTask.getTime();
+                }
+
                 //update all of the holds
                 for (int i = 0; i < numRecipes; i++)
                 {
                     holds[i] = Math.Max(0, holds[i] - recipeTask.getTime());
-                    totalTimeRequired -= holds[i]; //this just takes off time that is spent on waiting for passive events
                 }
+
                 //if the task is passive, add a hold
                 holds[longestTimeIndex] = !recipeTask.getActive() ? recipeTask.getTime() : 0;
 
